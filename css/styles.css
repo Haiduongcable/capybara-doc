@@ -604,6 +604,110 @@ section {
   color: var(--color-primary);
 }
 
+/* ---------- Download Section ---------- */
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.download-card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl) var(--spacing-2xl);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.download-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.download-icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.download-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.download-icon.macos {
+  background: rgba(148, 163, 184, 0.1);
+  color: #94A3B8;
+}
+
+.download-icon.linux {
+  background: rgba(249, 115, 22, 0.1);
+  color: #F97316;
+}
+
+.download-icon.windows {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3B82F6;
+}
+
+.download-info {
+  flex: 1;
+}
+
+.download-info h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-xs);
+}
+
+.download-info span {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.download-arrow {
+  color: var(--color-text-subtle);
+  transition: all var(--transition-fast);
+}
+
+.download-card:hover .download-arrow {
+  color: var(--color-primary);
+  transform: translateY(2px);
+}
+
+.download-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-xl);
+  font-size: 0.85rem;
+  color: var(--color-text-subtle);
+}
+
+.download-note svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .download-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---------- Documentation Section ---------- */
 .docs {
   background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-elevated) 100%);
