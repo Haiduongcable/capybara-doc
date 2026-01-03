@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Capybara Vibe - A powerful Multi-Agent CLI Coding Assistant. Free, open-source, and supports multiple AI providers including OpenAI, Anthropic, and Google AI.">
+    <meta name="keywords"
+        content="AI coding assistant, CLI tool, multi-agent, OpenAI, Anthropic, Gemini, open source, developer tools">
+    <meta name="author" content="Capybara Vibe Team">
+
+    <title>Capybara Vibe | Multi-Agent CLI Coding Assistant</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <a href="#" class="navbar-brand">
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="#3B82F6" />
+                    <path
+                        d="M8 12C8 10.8954 8.89543 10 10 10H22C23.1046 10 24 10.8954 24 12V14C24 15.1046 23.1046 16 22 16H10C8.89543 16 8 15.1046 8 14V12Z"
+                        fill="white" />
+                    <path
+                        d="M8 20C8 18.8954 8.89543 18 10 18H18C19.1046 18 20 18.8954 20 20V20C20 21.1046 19.1046 22 18 22H10C8.89543 22 8 21.1046 8 20V20Z"
+                        fill="white" opacity="0.7" />
+                </svg>
+                Capybara Vibe
+            </a>
+
+            <ul class="navbar-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#demo">Demo</a></li>
+                <li><a href="#installation">Install</a></li>
+                <li><a href="#docs">Docs</a></li>
+            </ul>
+
+            <div class="navbar-cta">
+                <a href="https://github.com/yourusername/capybara-vibe-coding" class="btn btn-secondary"
+                    target="_blank">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    GitHub
+                </a>
+                <a href="#installation" class="btn btn-primary">Get Started</a>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 12h18M3 6h18M3 18h18" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                        </svg>
+                        Free & Open Source
+                    </div>
+
+                    <h1>Your <span>AI-Powered</span> Coding Companion</h1>
+
+                    <p class="hero-description">
+                        Capybara Vibe is a powerful Multi-Agent CLI coding tool that leverages multiple AI providers.
+                        Smart task delegation, advanced planning, and seamless provider switching – all from your
+                        terminal.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#installation" class="btn btn-primary btn-lg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                            </svg>
+                            Install Now
+                        </a>
+                        <a href="#demo" class="btn btn-secondary btn-lg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            See Demo
+                        </a>
+                    </div>
+
+                    <div class="install-command">
+                        <code>pip install capybara-vibe</code>
+                        <button class="copy-btn" id="copy-install" aria-label="Copy install command">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hero-terminal">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="terminal-btn close"></span>
+                                <span class="terminal-btn minimize"></span>
+                                <span class="terminal-btn maximize"></span>
+                            </div>
+                            <span class="terminal-title">capybara ~ zsh</span>
+                        </div>
+                        <div class="terminal-body" id="hero-terminal">
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">$</span>
+                                <span class="terminal-command" id="typing-command"></span>
+                                <span class="terminal-cursor">|</span>
+                            </div>
+                            <div class="terminal-output" id="terminal-output"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Powerful Features</h2>
+                <p>Everything you need for AI-assisted coding, right in your terminal.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                    <h3>Multi-Agent Coding</h3>
+                    <p>Smart delegation of tasks to specialized sub-agents for complex operations.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                    </div>
+                    <h3>Multi-Provider</h3>
+                    <p>Seamlessly switch between OpenAI, Anthropic, Google AI, OpenRouter, and LiteLLM.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 11l3 3L22 4" />
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                        </svg>
+                    </div>
+                    <h3>Advanced Planning</h3>
+                    <p>Built-in Todo Planning and Plan Mode to break down complex objectives.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                            <path d="M2 17l10 5 10-5" />
+                            <path d="M2 12l10 5 10-5" />
+                        </svg>
+                    </div>
+                    <h3>Context Management</h3>
+                    <p>Memory Smart Compress ensures efficient context usage for long conversations.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                        </svg>
+                    </div>
+                    <h3>Custom Commands</h3>
+                    <p>Extend functionality with your own custom commands tailored to your workflow.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="1 4 1 10 7 10" />
+                            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+                        </svg>
+                    </div>
+                    <h3>Conversation Recovery</h3>
+                    <p>Never lose your context – easily resume previous coding sessions.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: rgba(34, 197, 94, 0.1); color: #22C55E;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <h3>Free Account Support</h3>
+                    <p>Integrates with ProxyPal for using free tier AI accounts.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: rgba(249, 115, 22, 0.1); color: #F97316;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                        </svg>
+                    </div>
+                    <h3>Safety & Security</h3>
+                    <p>Built-in protection with Safe Mode for high-risk operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="demo" id="demo">
+        <div class="container">
+            <div class="demo-container">
+                <div class="demo-content">
+                    <h2>See It In Action</h2>
+                    <p>Watch Capybara Vibe handle complex coding tasks with intelligent multi-agent coordination and
+                        seamless AI provider switching.</p>
+
+                    <ul class="demo-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Natural language to code generation
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Smart task decomposition and planning
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            File creation, editing, and refactoring
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Command execution with safety checks
+                        </li>
+                    </ul>
+
+                    <a href="https://github.com/yourusername/capybara-vibe-coding" class="btn btn-primary btn-lg"
+                        target="_blank">
+                        View on GitHub
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="demo-terminal">
+                    <div class="terminal-window terminal-large">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="terminal-btn close"></span>
+                                <span class="terminal-btn minimize"></span>
+                                <span class="terminal-btn maximize"></span>
+                            </div>
+                            <span class="terminal-title">Multi-Agent Demo</span>
+                        </div>
+                        <div class="terminal-body" id="demo-terminal">
+                            <!-- User Request -->
+                            <div class="demo-step">
+                                <div class="terminal-line user-input">
+                                    <span class="terminal-prompt text-primary">You:</span>
+                                    <span class="terminal-text">Build a full-stack e-commerce app</span>
+                                </div>
+                            </div>
+
+                            <!-- Parent Agent Response -->
+                            <div class="demo-step">
+                                <div class="agent-block parent-agent">
+                                    <div class="agent-header">
+                                        <span class="agent-badge parent">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                width="14" height="14">
+                                                <circle cx="12" cy="12" r="10" />
+                                                <circle cx="12" cy="10" r="3" />
+                                                <path d="M6.168 18.849A4 4 0 0 1 10 16h4a4 4 0 0 1 3.834 2.855" />
+                                            </svg>
+                                            Parent Agent
+                                        </span>
+                                    </div>
+                                    <div class="agent-content">
+                                        <div class="todo-header">Breaking down the task:</div>
+                                        <div class="todo-list">
+                                            <div class="todo-item done">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" width="14" height="14">
+                                                    <polyline points="20 6 9 17 4 12" />
+                                                </svg>
+                                                <span>Set up project structure</span>
+                                            </div>
+                                            <div class="todo-item delegating">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" width="14" height="14">
+                                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                                </svg>
+                                                <span>Build database models</span>
+                                                <span class="delegate-badge">delegating</span>
+                                            </div>
+                                            <div class="todo-item pending">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" width="14" height="14">
+                                                    <circle cx="12" cy="12" r="10" />
+                                                </svg>
+                                                <span>Create API endpoints</span>
+                                            </div>
+                                            <div class="todo-item pending">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" width="14" height="14">
+                                                    <circle cx="12" cy="12" r="10" />
+                                                </svg>
+                                                <span>Build frontend components</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Delegation Arrow -->
+                            <div class="demo-step">
+                                <div class="delegation-arrow">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        width="20" height="20">
+                                        <path d="M12 5v14M19 12l-7 7-7-7" />
+                                    </svg>
+                                    <span>Delegating complex task to sub-agent...</span>
+                                </div>
+                            </div>
+
+                            <!-- Child Sub-Agent -->
+                            <div class="demo-step">
+                                <div class="agent-block child-agent">
+                                    <div class="agent-header">
+                                        <span class="agent-badge child">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                width="14" height="14">
+                                                <circle cx="12" cy="12" r="10" />
+                                                <circle cx="12" cy="10" r="3" />
+                                                <path d="M6.168 18.849A4 4 0 0 1 10 16h4a4 4 0 0 1 3.834 2.855" />
+                                            </svg>
+                                            Sub-Agent: Database Specialist
+                                        </span>
+                                    </div>
+                                    <div class="agent-content">
+                                        <div class="subagent-task">Working on: Build database models</div>
+                                        <div class="tool-execution">
+                                            <span class="tool-icon">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" width="14" height="14">
+                                                    <path
+                                                        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                                                </svg>
+                                            </span>
+                                            <span class="tool-name">write_file</span>
+                                            <span class="tool-arg">src/models/product.py</span>
+                                        </div>
+                                        <div class="code-preview">
+                                            <span class="code-line"><span class="keyword">class</span>
+                                                Product(BaseModel):</span>
+                                            <span class="code-line"> name: <span class="string">str</span></span>
+                                            <span class="code-line"> price: <span class="string">float</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Return to Parent -->
+                            <div class="demo-step">
+                                <div class="return-result">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        width="14" height="14">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>
+                                    <span>Sub-agent completed task → Returning to Parent Agent</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operation Modes Section -->
+    <section class="modes" id="modes">
+        <div class="container">
+            <div class="section-header">
+                <h2>Flexible Operation Modes</h2>
+                <p>Choose the right mode for your workflow – from read-only planning to full autonomy.</p>
+            </div>
+
+            <div class="modes-grid">
+                <div class="mode-card">
+                    <div class="mode-icon-svg">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                            <line x1="9" y1="9" x2="9.01" y2="9" />
+                            <line x1="15" y1="9" x2="15.01" y2="9" />
+                        </svg>
+                    </div>
+                    <h3>Standard Mode</h3>
+                    <p>Balanced autonomy. Asks permission for sensitive actions.</p>
+                    <code>capybara</code>
+                </div>
+
+                <div class="mode-card">
+                    <div class="mode-icon-svg" style="color: #3B82F6;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="16" y1="13" x2="8" y2="13" />
+                            <line x1="16" y1="17" x2="8" y2="17" />
+                            <polyline points="10 9 9 9 8 9" />
+                        </svg>
+                    </div>
+                    <h3>Plan Mode</h3>
+                    <p>Read-only analysis and architectural planning.</p>
+                    <code>capybara --mode plan</code>
+                </div>
+
+                <div class="mode-card">
+                    <div class="mode-icon-svg" style="color: #22C55E;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            <polyline points="9 12 11 14 15 10" />
+                        </svg>
+                    </div>
+                    <h3>Safe Mode</h3>
+                    <p>Maximum control. Confirms every action.</p>
+                    <code>capybara --mode safe</code>
+                </div>
+
+                <div class="mode-card">
+                    <div class="mode-icon-svg" style="color: #F97316;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                        </svg>
+                    </div>
+                    <h3>Auto Mode</h3>
+                    <p>Maximum autonomy for trusted workflows.</p>
+                    <code>capybara --mode auto</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section class="installation" id="installation">
+        <div class="container">
+            <div class="section-header">
+                <h2>Quick Installation</h2>
+                <p>Get up and running in seconds with pip or from source.</p>
+            </div>
+
+            <div class="install-grid">
+                <div class="install-option">
+                    <h3>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                        Install via Pip
+                    </h3>
+                    <p>The easiest way to install Capybara Vibe. Available on PyPI.</p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Terminal</span>
+                            <button class="copy-btn" data-copy="pip install capybara-vibe" aria-label="Copy command">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <pre>pip install capybara-vibe</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="install-option">
+                    <h3>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                        </svg>
+                        Install from Source
+                    </h3>
+                    <p>For developers who want the latest features or want to contribute.</p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Terminal</span>
+                            <button class="copy-btn" data-copy="git clone https://github.com/yourusername/capybara-vibe-coding
+cd capybara-vibe-coding
+pip install -e ." aria-label="Copy command">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <pre><span class="comment"># Clone the repository</span>
+git clone https://github.com/yourusername/capybara-vibe-coding
+cd capybara-vibe-coding
+
+<span class="comment"># Install in editable mode</span>
+pip install -e .</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Start -->
+            <div class="section-header" style="margin-top: var(--spacing-3xl);">
+                <h2>Quick Start</h2>
+                <p>Just three commands to get started.</p>
+            </div>
+
+            <div class="code-block" style="max-width: 700px; margin: 0 auto;">
+                <div class="code-header">
+                    <span>Getting Started</span>
+                </div>
+                <div class="code-content">
+                    <pre><span class="comment"># 1. Initialize configuration (opens web UI)</span>
+capybara init
+
+<span class="comment"># 2. Start interactive chat</span>
+capybara
+
+<span class="comment"># 3. Or run a single prompt</span>
+capybara run "Create a python function that reverses a string"</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section class="docs" id="docs">
+        <div class="container">
+            <div class="section-header">
+                <h2>Developer Documentation</h2>
+                <p>Deep dive into the architecture and learn how to extend Capybara Vibe.</p>
+            </div>
+
+            <div class="docs-grid">
+                <div class="doc-card">
+                    <div class="doc-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                        </svg>
+                    </div>
+                    <h3>Architecture Overview</h3>
+                    <p>Understand the modular, event-driven architecture with state machines and tool execution
+                        pipelines.</p>
+                    <a href="https://github.com/yourusername/capybara-vibe-coding/blob/main/DEVELOPER.md#architecture-overview"
+                        target="_blank">
+                        Read Guide
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                            height="16">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                        </svg>
+                    </div>
+                    <h3>Internal API</h3>
+                    <p>Use Capybara as a library in your own Python scripts with the Agent, Memory, and Tools APIs.</p>
+                    <a href="https://github.com/yourusername/capybara-vibe-coding/blob/main/DEVELOPER.md#using-the-internal-api"
+                        target="_blank">
+                        View API
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                            height="16">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="8" x2="12" y2="12" />
+                            <line x1="12" y1="16" x2="12.01" y2="16" />
+                        </svg>
+                    </div>
+                    <h3>Extending Tools</h3>
+                    <p>Learn how to add custom tools and integrate new LLM providers into the system.</p>
+                    <a href="https://github.com/yourusername/capybara-vibe-coding/blob/main/DEVELOPER.md#extending-the-library"
+                        target="_blank">
+                        Learn More
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                            height="16">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Code Example: Adding a Tool -->
+            <div style="margin-top: var(--spacing-3xl);">
+                <div class="section-header">
+                    <h3>Example: Adding a Custom Tool</h3>
+                    <p>Extend Capybara with your own async tools in just a few lines.</p>
+                </div>
+
+                <div class="code-block" style="max-width: 800px; margin: 0 auto;">
+                    <div class="code-header">
+                        <span>custom_tool.py</span>
+                        <button class="copy-btn" data-copy="from capybara.tools.registry import ToolRegistry
+
+registry = ToolRegistry()
+
+@registry.tool(
+    name='sys_info',
+    description='Get system information',
+    parameters={'type': 'object', 'properties': {}}
+)
+async def sys_info():
+    import platform
+    return f'System: {platform.system()} {platform.release()}'" aria-label="Copy code">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="code-content">
+                        <pre><span class="keyword">from</span> capybara.tools.registry <span class="keyword">import</span> ToolRegistry
+
+registry = ToolRegistry()
+
+<span class="variable">@registry.tool</span>(
+    name=<span class="string">'sys_info'</span>,
+    description=<span class="string">'Get system information'</span>,
+    parameters={<span class="string">'type'</span>: <span class="string">'object'</span>, <span class="string">'properties'</span>: {}}
+)
+<span class="keyword">async def</span> <span class="function">sys_info</span>():
+    <span class="keyword">import</span> platform
+    <span class="keyword">return</span> <span class="string">f'System: {platform.system()} {platform.release()}'</span></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Capybara Vibe</h3>
+                    <p>A powerful Multi-Agent CLI Coding Assistant.<br>Free, open-source, and built with love.</p>
+                    <div class="footer-social">
+                        <a href="https://github.com/yourusername/capybara-vibe-coding" target="_blank"
+                            aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                        </a>
+                        <a href="https://pypi.org/project/capybara-vibe/" target="_blank" aria-label="PyPI">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                                <path
+                                    d="M12.042 23.648c-.553-.005-1.103-.06-1.637-.163l-5.377-1.033c-.873-.168-1.544-.73-1.863-1.482L.45 15.108a2.54 2.54 0 0 1 .122-2.168L4.03 6.257a2.54 2.54 0 0 1 1.735-1.326l5.377-1.033c.534-.103 1.084-.157 1.637-.163.553.006 1.103.06 1.637.163l5.377 1.033c.873.168 1.544.73 1.863 1.482l2.715 5.862a2.54 2.54 0 0 1-.122 2.168l-3.458 6.683a2.54 2.54 0 0 1-1.735 1.326l-5.377 1.033c-.534.103-1.084.157-1.637.163z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#installation">Installation</a></li>
+                        <li><a href="#docs">Documentation</a></li>
+                        <li><a href="https://github.com/yourusername/capybara-vibe-coding" target="_blank">GitHub</a>
+                        </li>
+                        <li><a href="https://pypi.org/project/capybara-vibe/" target="_blank">PyPI</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://github.com/yourusername/capybara-vibe-coding/issues" target="_blank">Report
+                                Issues</a></li>
+                        <li><a href="https://github.com/yourusername/capybara-vibe-coding/pulls"
+                                target="_blank">Contribute</a></li>
+                        <li><a href="https://github.com/yourusername/capybara-vibe-coding/discussions"
+                                target="_blank">Discussions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Related</h4>
+                    <ul>
+                        <li><a href="https://github.com/heyhuynhgiabuu/proxypal" target="_blank">ProxyPal</a></li>
+                        <li><a href="https://github.com/router-for-me/CLIProxyAPI" target="_blank">CLIProxyAPI</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Capybara Vibe. Released under the MIT License.</p>
+                <p>Made with <svg
+                        style="display:inline-block;vertical-align:middle;width:16px;height:16px;color:#EF4444;"
+                        viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg> by the Capybara Vibe Team</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
