@@ -4,7 +4,7 @@
 
 /* ---------- Design Tokens ---------- */
 :root {
-  /* Colors - Dark Dev Tool Palette */
+  /* Colors - Dark Dev Tool Palette (Default) */
   --color-primary: #3B82F6;
   --color-primary-hover: #2563EB;
   --color-secondary: #1E293B;
@@ -54,6 +54,296 @@
   --transition-fast: 150ms ease-out;
   --transition-normal: 200ms ease-out;
   --transition-slow: 300ms ease-out;
+
+  /* Terminal Colors */
+  --terminal-bg: #0D1117;
+}
+
+/* ---------- Light Mode Theme ---------- */
+[data-theme="light"] {
+  --color-primary: #2563EB;
+  --color-primary-hover: #1D4ED8;
+  --color-secondary: #E2E8F0;
+  --color-accent: #16A34A;
+  --color-accent-orange: #EA580C;
+
+  --color-bg: #F8FAFC;
+  --color-bg-elevated: #FFFFFF;
+  --color-bg-card: rgba(255, 255, 255, 0.9);
+
+  --color-text: #0F172A;
+  --color-text-muted: #475569;
+  --color-text-subtle: #64748B;
+
+  --color-border: #E2E8F0;
+  --color-border-light: rgba(226, 232, 240, 0.8);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 40px rgba(37, 99, 235, 0.15);
+  --shadow-glow-green: 0 0 30px rgba(22, 163, 74, 0.1);
+
+  --terminal-bg: #1E293B;
+}
+
+/* ---------- Theme Toggle Button ---------- */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.theme-toggle:hover {
+  background: var(--color-bg-elevated);
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon,
+.theme-toggle .icon-auto {
+  display: none;
+}
+
+/* Show appropriate icon based on theme */
+[data-theme="light"] .theme-toggle .icon-sun {
+  display: block;
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+  display: block;
+}
+
+html:not([data-theme]) .theme-toggle .icon-auto,
+[data-theme="auto"] .theme-toggle .icon-auto {
+  display: block;
+}
+
+/* ---------- Light Mode Component Adjustments ---------- */
+[data-theme="light"] .navbar {
+  background: rgba(248, 250, 252, 0.9);
+  border-color: var(--color-border);
+}
+
+/* Light Terminal Theme */
+[data-theme="light"] .terminal-window {
+  background: #FFFFFF;
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+
+[data-theme="light"] .terminal-header {
+  background: #F1F5F9;
+  border-color: var(--color-border);
+}
+
+[data-theme="light"] .terminal-title {
+  color: #64748B;
+}
+
+[data-theme="light"] .terminal-body {
+  background: #FFFFFF;
+  color: #1E293B;
+}
+
+[data-theme="light"] .terminal-prompt {
+  color: #16A34A;
+}
+
+[data-theme="light"] .terminal-command,
+[data-theme="light"] .terminal-text {
+  color: #1E293B;
+}
+
+[data-theme="light"] .terminal-cursor {
+  color: #2563EB;
+}
+
+[data-theme="light"] .text-muted {
+  color: #64748B;
+}
+
+[data-theme="light"] .text-primary {
+  color: #2563EB;
+}
+
+[data-theme="light"] .text-accent {
+  color: #16A34A;
+}
+
+/* Light mode agent blocks */
+[data-theme="light"] .agent-block {
+  background: #F8FAFC;
+}
+
+[data-theme="light"] .parent-agent {
+  background: rgba(37, 99, 235, 0.05);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+[data-theme="light"] .child-agent {
+  background: rgba(22, 163, 74, 0.05);
+  border-color: rgba(22, 163, 74, 0.2);
+}
+
+[data-theme="light"] .agent-header {
+  border-color: var(--color-border-light);
+}
+
+[data-theme="light"] .tool-execution {
+  background: rgba(37, 99, 235, 0.08);
+}
+
+[data-theme="light"] .tool-name {
+  color: #2563EB;
+}
+
+[data-theme="light"] .tool-arg {
+  color: #64748B;
+}
+
+[data-theme="light"] .code-preview {
+  background: #F1F5F9;
+}
+
+[data-theme="light"] .code-preview .code-line {
+  color: #1E293B;
+}
+
+[data-theme="light"] .code-preview .keyword {
+  color: #7C3AED;
+}
+
+[data-theme="light"] .code-preview .string {
+  color: #16A34A;
+}
+
+[data-theme="light"] .todo-item {
+  color: #475569;
+}
+
+[data-theme="light"] .subagent-task {
+  background: rgba(22, 163, 74, 0.1);
+  color: #166534;
+}
+
+[data-theme="light"] .delegation-arrow {
+  color: #EA580C;
+}
+
+[data-theme="light"] .delegate-badge {
+  background: rgba(234, 88, 12, 0.15);
+  color: #EA580C;
+}
+
+[data-theme="light"] .return-result {
+  background: rgba(22, 163, 74, 0.1);
+  color: #166534;
+}
+
+[data-theme="light"] .hero::before {
+  background: radial-gradient(circle at 30% 20%, rgba(37, 99, 235, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 70% 80%, rgba(22, 163, 74, 0.05) 0%, transparent 40%);
+}
+
+[data-theme="light"] .hero h1 {
+  background: linear-gradient(135deg, var(--color-text) 0%, var(--color-text-muted) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="light"] .feature-card,
+[data-theme="light"] .mode-card,
+[data-theme="light"] .doc-card,
+[data-theme="light"] .install-option,
+[data-theme="light"] .download-card {
+  background: var(--color-bg-card);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Light mode code blocks */
+[data-theme="light"] .code-block {
+  background: #FFFFFF;
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .code-block .code-header {
+  background: #F1F5F9;
+  border-color: var(--color-border);
+}
+
+[data-theme="light"] .code-block .code-header span {
+  color: #64748B;
+}
+
+[data-theme="light"] .code-block .code-content,
+[data-theme="light"] .code-block pre {
+  color: #1E293B;
+}
+
+[data-theme="light"] .code-block .comment {
+  color: #64748B;
+}
+
+[data-theme="light"] .code-block .keyword {
+  color: #7C3AED;
+}
+
+[data-theme="light"] .code-block .string {
+  color: #16A34A;
+}
+
+[data-theme="light"] .code-block .function {
+  color: #2563EB;
+}
+
+[data-theme="light"] .code-block .variable {
+  color: #DC2626;
+}
+
+[data-theme="light"] .install-command {
+  background: var(--color-bg-elevated);
+  border-color: var(--color-border);
+}
+
+[data-theme="light"] .install-command code {
+  color: var(--color-text);
+}
+
+[data-theme="light"] .footer {
+  background: var(--color-bg-elevated);
+  border-color: var(--color-border);
+}
+
+[data-theme="light"] .footer-social a {
+  background: var(--color-bg);
+  border-color: var(--color-border);
+}
+
+/* Mobile menu light mode */
+[data-theme="light"] .navbar.mobile-open .navbar-links {
+  background: rgba(248, 250, 252, 0.98);
+}
+
+[data-theme="light"] .navbar.mobile-open .navbar-cta {
+  background: rgba(248, 250, 252, 0.98);
 }
 
 /* ---------- Reset & Base ---------- */

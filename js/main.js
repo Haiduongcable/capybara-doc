@@ -3,12 +3,77 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    initThemeToggle();
     initCopyButtons();
     initMobileMenu();
     initSmoothScroll();
     initNavbarScroll();
     initHeroTerminal();
 });
+
+/**
+ * Theme Toggle - Dark/Light/Auto Mode
+ */
+function initThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    // Theme order: auto -> light -> dark -> auto
+    const themes = ['auto', 'light', 'dark'];
+
+    // Get saved theme or default to auto
+    const savedTheme = localStorage.getItem('theme') || 'auto';
+
+    // Apply initial theme
+    applyTheme(savedTheme);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme') || 'auto';
+            const currentIndex = themes.indexOf(currentTheme);
+            const nextIndex = (currentIndex + 1) % themes.length;
+            const nextTheme = themes[nextIndex];
+
+            applyTheme(nextTheme);
+            localStorage.setItem('theme', nextTheme);
+
+            // Update tooltip
+            themeToggle.title = `Theme: ${nextTheme.charAt(0).toUpperCase() + nextTheme.slice(1)}`;
+        });
+    }
+
+    // Listen for system preference changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        const currentTheme = html.getAttribute('data-theme');
+        if (currentTheme === 'auto') {
+            applyTheme('auto');
+        }
+    });
+
+    function applyTheme(theme) {
+        if (theme === 'auto') {
+            // Use system preference
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            html.setAttribute('data-theme', 'auto');
+            // Apply actual colors based on system preference
+            if (prefersDark) {
+                html.classList.remove('light-mode');
+                html.classList.add('dark-mode');
+            } else {
+                html.classList.remove('dark-mode');
+                html.classList.add('light-mode');
+                // For auto mode with light preference, we need to apply light colors
+                html.setAttribute('data-theme', 'light');
+                html.setAttribute('data-auto', 'true');
+            }
+        } else {
+            html.removeAttribute('data-auto');
+            html.setAttribute('data-theme', theme);
+            html.classList.remove('light-mode', 'dark-mode');
+            html.classList.add(theme + '-mode');
+        }
+    }
+}
 
 /**
  * Copy to clipboard functionality
